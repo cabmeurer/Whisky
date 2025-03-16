@@ -8,9 +8,8 @@ This guide provides a complete walkthrough for getting Steam working in Whisky o
 - [Building Whisky from Source](#building-whisky-from-source)
 - [Installing Steam](#installing-steam)
 - [Fixing Steam Launch Issues](#fixing-steam-launch-issues)
-- [Optimizing for Gaming](#optimizing-for-gaming)
-- [Troubleshooting](#troubleshooting)
-- [Game-Specific Tips](#game-specific-tips)
+- [Notes](#notes)
+- [Credits](#credits)
 
 ## Introduction
 
@@ -110,9 +109,9 @@ Steam on Wine often encounters update and verification errors. Here's how to fix
    - Click "Run..." to start Steam with the new configuration
    - You should now see the Steam login screen
 
-## Optimizing for Gaming
+## Notes
 
-Once Steam is running, follow these steps for better gaming performance:
+If the force update failed, check for missing dependencies:
 
 1. **Install Winetricks components** (if needed)
    - In your Steam bottle, go to Config → Winetricks
@@ -120,67 +119,6 @@ Once Steam is running, follow these steps for better gaming performance:
      - corefonts
      - d3dx9
      - vcrun2019
-
-2. **Steam settings**
-   - In Steam Settings → Interface → Disable "GPU accelerated rendering in web views"
-   - In Steam Settings → Shader Pre-Caching → Disable all options
-   - In Steam Settings → Remote Play → Disable all Remote Play features
-
-3. **Whisky configuration**
-   - Enable DXVK in the Config tab (improves DirectX performance)
-   - Enable Esync if available (improves multi-threading)
-
-4. **Game-specific launch options**
-   - Right-click on a game → Properties → Launch Options
-   - Add for most games:
-     ```
-     DXVK_ASYNC=1 %command%
-     ```
-
-## Troubleshooting
-
-### Steam won't launch or shows a blank window
-- Try adding `-silent -nocrashmonitor -no-browser` to the launch arguments
-- Install additional Winetricks components: wininet, msls31
-
-### Specific error: "Unexpected Transport Error (0x3008)"
-- Add `-no-browser -no-cef-sandbox` to launch arguments
-- Set environment variables in Whisky Config:
-  ```
-  STEAM_RUNTIME=0
-  STEAM_RUNTIME_HEAVY=0
-  ```
-
-### Games crash on launch
-- Check if the game has specific requirements in the [Whisky wiki](https://github.com/Whisky-App/Whisky/wiki/Game-Support)
-- Try adding `-force-d3d9` or `-force-opengl` to game launch options
-- Right-click the game → Properties → set compatibility to Windows 7
-
-### Performance issues
-- Lower in-game resolution and graphics settings
-- Disable post-processing effects
-- Use the `-dx9` launch option for games that support it
-- Close other resource-intensive applications
-
-## Game-Specific Tips
-
-### General compatibility
-- 2D games generally work very well
-- Indie games with simpler graphics tend to have fewer issues
-- Games with OpenGL or DirectX 9/11 support work better
-- Games with anti-cheat systems (EAC, BattlEye) usually don't work
-
-### For demanding games like Elden Ring
-- Set game-specific environment variables in Whisky:
-  ```
-  DXVK_ASYNC=1
-  DXVK_FRAME_RATE=60
-  ```
-- Use the game's lowest graphics settings initially
-- Reduce resolution to 1280x720 or lower for better performance
-- Gradually increase settings once you confirm the game runs stably
-
----
 
 ## Credits
 
