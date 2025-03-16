@@ -184,6 +184,6 @@ Once Steam is running, follow these steps for better gaming performance:
 
 ## Credits
 
-This guide was developed by testing various approaches from the Whisky community, particularly the approach shared by [neighborhoodciv on Nov 6, 2024](https://github.com/Whisky-App/Whisky/issues/94.
+This guide was developed by testing various approaches from the Whisky community, particularly the approach shared by [neighborhoodciv on Nov 6, 2024](https://github.com/Whisky-App/Whisky/issues/94).
 
 Special thanks to the Whisky development team for making Windows gaming on Apple Silicon possible!
