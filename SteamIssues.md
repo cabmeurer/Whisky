@@ -93,7 +93,7 @@ Steam on Wine often encounters update and verification errors. Here's how to fix
 3. **Force download a compatible Steam version**
    - Run this command to force Steam to download a compatible version:
      ```bash
-     wine steam.exe -forcesteamupdate -forcepackagedownload -overridepackageurl http://web.archive.org/web/202405201f_/media.steampowered.com/client -exitsream
+     wine steam.exe -forcesteamupdate -forcepackagedownload -overridepackageurl http://web.archive.org/web/20250306194830if_/media.steampowered.com/client -exitsream
      ```
    - This will download an older version of Steam that works better with Wine and then exit
    - note: keep a lookout for any failures and/or missing dependencies before moving on.
